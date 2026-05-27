@@ -295,11 +295,9 @@ $TrailEffect.clear_trail()
 
 Some addons are modified, expanded, or inspired by other developers' work:
 
-- `addons/stats` is a modification of the stats addon by Queble.
-- `addons/callable_state_machine` is a modification and expansion of the callable state machine by Firebelly Studio.
-- `addons/components/hitbox` frame-data hitboxes were heavily inspired by examples shown by Inbound Shovel.
-
-Third-party addons that were previously present in this project have been removed.
+- `addons/stats` is a modification of the stats addon by Queble: https://www.youtube.com/watch?v=vsBb9921GfA
+- `addons/callable_state_machine` is a modification and expansion of the callable state machine by Firebelley: https://gist.github.com/firebelley/96f2f82e3feaa2756fe647d8b9843174
+- `addons/components/hitbox` frame-data hitboxes were heavily inspired by examples shown by Inbound Shovel: https://www.youtube.com/watch?v=Dptztdm1rtg
 
 ## License
 
