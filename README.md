@@ -206,6 +206,8 @@ func _physics_process(delta: float) -> void:
 
 ## Inventory
 
+**!!! The this is still very unfinished. !!!**
+
 The inventory addon uses resource data and UI scenes.
 
 - `ItemData`: item name, description, max stack, and texture.
