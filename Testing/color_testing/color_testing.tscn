@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dthqdee04ybnt"]
+
+[ext_resource type="Script" uid="uid://ct1h1qcuf68yh" path="res://addons/color_palette/color_palette.gd" id="1_336wh"]
+[ext_resource type="Script" uid="uid://b4856clv1da0n" path="res://Testing/color_testing/color_testing.gd" id="1_eatj8"]
+[ext_resource type="Texture2D" uid="uid://43wqhdccs2f5" path="res://addons/components/health/icon_health_component.png" id="3_eatj8"]
+
+[node name="ColorTesting" type="Node"]
+script = ExtResource("1_eatj8")
+
+[node name="ColorPaletteMaker" type="GridContainer" parent="."]
+offset_left = 96.0
+offset_top = 72.0
+offset_right = 264.0
+offset_bottom = 200.0
+columns = 4
+script = ExtResource("1_336wh")
+colors = Array[Color]([Color(1, 0, 0, 1), Color(1, 0.403922, 0, 1), Color(1, 0.705882, 0, 1), Color(1, 1, 0, 1), Color(0.694118, 1, 0, 1), Color(0.517647, 1, 0, 1), Color(0.298039, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 1, 0.317647, 1), Color(0, 1, 0.568627, 1), Color(0, 1, 0.745098, 1), Color(0, 1, 1, 1), Color(0, 0.678431, 1, 1), Color(0, 0.470588, 1, 1), Color(0, 0.266667, 1, 1), Color(0, 0, 1, 1)])
+metadata/_custom_type_script = "uid://ct1h1qcuf68yh"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(336, 120)
+scale = Vector2(4, 4)
+texture = ExtResource("3_eatj8")

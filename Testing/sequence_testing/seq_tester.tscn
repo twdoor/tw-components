@@ -1,0 +1,215 @@
+[gd_scene load_steps=27 format=3 uid="uid://cfprduenldxrl"]
+
+[ext_resource type="Script" uid="uid://7t381sbouty7" path="res://Testing/sequence_testing/seq_tester.gd" id="1_qlnaf"]
+[ext_resource type="Texture2D" uid="uid://cdy88qd6xu6i6" path="res://icon.svg" id="2_2h651"]
+[ext_resource type="Script" uid="uid://conf0g3cxbcxb" path="res://addons/sequence_nodes/sequence.gd" id="2_k12by"]
+[ext_resource type="Script" uid="uid://d2pbg86o5bnym" path="res://addons/sequence_nodes/tree_sequence.gd" id="3_n2c5u"]
+
+[sub_resource type="Animation" id="Animation_k12by"]
+resource_name = "1_1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.2, 0.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_piqlx"]
+resource_name = "1_2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b1hao"]
+resource_name = "2_1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2h651"]
+resource_name = "2_2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rv7cu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mcp0q"]
+_data = {
+&"1_1": SubResource("Animation_k12by"),
+&"1_2": SubResource("Animation_piqlx"),
+&"2_1": SubResource("Animation_b1hao"),
+&"2_2": SubResource("Animation_2h651"),
+&"RESET": SubResource("Animation_rv7cu")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n2c5u"]
+animation = &"1_1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bki1x"]
+animation = &"1_2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lfrb6"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_au2e4"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h0xwv"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_au2e4"]
+states/1_1/node = SubResource("AnimationNodeAnimation_n2c5u")
+states/1_1/position = Vector2(299, 96)
+states/1_2/node = SubResource("AnimationNodeAnimation_bki1x")
+states/1_2/position = Vector2(424, 97)
+transitions = ["Start", "1_1", SubResource("AnimationNodeStateMachineTransition_lfrb6"), "1_1", "1_2", SubResource("AnimationNodeStateMachineTransition_au2e4"), "1_2", "1_1", SubResource("AnimationNodeStateMachineTransition_h0xwv")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uokks"]
+animation = &"2_1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v7c4n"]
+animation = &"2_2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jjv4d"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lukmc"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nxhn7"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_cx7jv"]
+states/2_1/node = SubResource("AnimationNodeAnimation_uokks")
+states/2_1/position = Vector2(302, 100)
+states/2_2/node = SubResource("AnimationNodeAnimation_v7c4n")
+states/2_2/position = Vector2(424, 107)
+transitions = ["Start", "2_1", SubResource("AnimationNodeStateMachineTransition_jjv4d"), "2_1", "2_2", SubResource("AnimationNodeStateMachineTransition_lukmc"), "2_2", "2_1", SubResource("AnimationNodeStateMachineTransition_nxhn7")]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ng0ot"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ody2p"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ygxj8"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_bki1x"]
+states/test1/node = SubResource("AnimationNodeStateMachine_au2e4")
+states/test1/position = Vector2(380, 100)
+states/test2/node = SubResource("AnimationNodeStateMachine_cx7jv")
+states/test2/position = Vector2(545, 100)
+transitions = ["Start", "test1", SubResource("AnimationNodeStateMachineTransition_ng0ot"), "test1", "test2", SubResource("AnimationNodeStateMachineTransition_ody2p"), "test2", "test1", SubResource("AnimationNodeStateMachineTransition_ygxj8")]
+
+[node name="SeqTester" type="Node" node_paths=PackedStringArray("first_phase", "sec_phase")]
+script = ExtResource("1_qlnaf")
+first_phase = NodePath("TreeSequence")
+sec_phase = NodePath("TreeSequence2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(128, 128)
+texture = ExtResource("2_2h651")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mcp0q")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_bki1x")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="AttackButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.395
+anchor_right = 0.16700001
+anchor_bottom = 0.59300005
+offset_left = -0.51200104
+offset_top = 0.039993286
+offset_right = -0.38401794
+offset_bottom = -0.2640381
+
+[node name="TreeSequence" type="Node" parent="." node_paths=PackedStringArray("tree")]
+script = ExtResource("3_n2c5u")
+run_order = 0
+tree = NodePath("../AnimationTree")
+state_machine_path = &"test1"
+state_array = Array[StringName]([&"1_1", &"1_2"])
+metadata/_custom_type_script = "uid://d2pbg86o5bnym"
+
+[node name="TreeSequence2" type="Node" parent="." node_paths=PackedStringArray("tree")]
+script = ExtResource("3_n2c5u")
+run_order = 0
+tree = NodePath("../AnimationTree")
+state_machine_path = &"test2"
+state_array = Array[StringName]([&"2_1", &"2_2"])
+metadata/_custom_type_script = "uid://d2pbg86o5bnym"
+
+[node name="Sequence" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("2_k12by")
+player = NodePath("../AnimationPlayer")
+animation_array = Array[StringName]([&"1_1", &"1_2"])
+metadata/_custom_type_script = "uid://conf0g3cxbcxb"
+
+[node name="Sequence2" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("2_k12by")
+player = NodePath("../AnimationPlayer")
+animation_array = Array[StringName]([&"2_1", &"2_2"])
+metadata/_custom_type_script = "uid://conf0g3cxbcxb"

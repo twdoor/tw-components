@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0xcdt7klmgd4"]
+
+[ext_resource type="Theme" uid="uid://djrtr0f0f125t" path="res://addons/color_palette/palette_theme.tres" id="1_4hre7"]
+[ext_resource type="Script" uid="uid://cmco3b31mdxoq" path="res://addons/color_palette/color_button/color_button.gd" id="2_6hqm3"]
+
+[node name="ColorButton" type="Button"]
+custom_minimum_size = Vector2(32, 32)
+theme = ExtResource("1_4hre7")
+theme_type_variation = &"FlatButton"
+script = ExtResource("2_6hqm3")
+metadata/_custom_type_script = "uid://cmco3b31mdxoq"

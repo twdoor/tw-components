@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://xnvpydle6ahj"]
+
+[ext_resource type="Script" uid="uid://c2sclstvn73rf" path="res://addons/inventory_components_2/data/item_data.gd" id="1_yamk5"]
+[ext_resource type="Texture2D" uid="uid://bwtkkk6iliue7" path="res://addons/inventory_components_2/data/icon_inventory_data.png" id="2_kjbye"]
+
+[resource]
+script = ExtResource("1_yamk5")
+name = &"Chest"
+description = "its a chest"
+max_stack = 10
+texture = ExtResource("2_kjbye")
+metadata/_custom_type_script = "uid://c2sclstvn73rf"

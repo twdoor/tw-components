@@ -1,0 +1,54 @@
+class_name CallableStateMachine
+
+signal state_changed(state: String)
+
+var state_dictionary = {}
+var current_state: String:
+	set(value):
+		current_state = value
+		state_changed.emit(value)
+
+
+func add_states(
+	normal_state_callable: Callable,
+	enter_state_callable: Callable = Callable(),
+	leave_state_callable: Callable = Callable()
+) -> void:
+	state_dictionary[normal_state_callable.get_method()] = {
+		"normal": normal_state_callable,
+		"enter": enter_state_callable,
+		"leave": leave_state_callable
+	}
+
+
+func set_initial_state(state_callable: Callable) -> void:
+	var state_name = state_callable.get_method()
+	if state_dictionary.has(state_name):
+		_set_state(state_name)
+	else:
+		push_warning("No state with name " + state_name)
+
+
+func update() -> void:
+	if current_state != null:
+		(state_dictionary[current_state].normal as Callable).call()
+
+
+func change_state(state_callable: Callable) -> void:
+	var state_name = state_callable.get_method()
+	if state_dictionary.has(state_name):
+		_set_state.call_deferred(state_name)
+	else:
+		push_warning("No state with name " + state_name)
+
+
+func _set_state(state_name: String) -> void:
+	if current_state:
+		var leave_callable = state_dictionary[current_state].leave as Callable
+		if !leave_callable.is_null():
+			leave_callable.call()
+	
+	current_state = state_name
+	var enter_callable = state_dictionary[current_state].enter as Callable
+	if !enter_callable.is_null():
+		enter_callable.call()

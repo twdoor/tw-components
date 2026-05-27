@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://cd6r5l2fnrj73"]
+
+[ext_resource type="Script" uid="uid://cs4rycmwfft4d" path="res://Testing/inv_test_2/inv_test.gd" id="1_t6s8l"]
+[ext_resource type="PackedScene" uid="uid://4knp3ic2wjf2" path="res://addons/inventory_components_2/inventory/inventory.tscn" id="2_0hv7w"]
+[ext_resource type="Resource" uid="uid://c61pn7d4cm51c" path="res://Testing/inv_test_2/main_inv.tres" id="2_24u31"]
+[ext_resource type="Script" uid="uid://cib54n8tc42ej" path="res://addons/inventory_components_2/data/inventory_data.gd" id="3_xtse5"]
+[ext_resource type="Script" uid="uid://dl8gbia0v5xny" path="res://addons/inventory_components_2/data/slot_data.gd" id="4_g8rgs"]
+[ext_resource type="Script" uid="uid://bq5n1cruftpi3" path="res://Testing/inv_test_2/chest.gd" id="5_agx6v"]
+[ext_resource type="PackedScene" uid="uid://dsjwusyjqiaox" path="res://addons/inventory_components_2/slot/slot.tscn" id="7_xtse5"]
+
+[sub_resource type="Resource" id="Resource_e51x1"]
+script = ExtResource("3_xtse5")
+slot_datas = Array[ExtResource("4_g8rgs")]([null, null, null, null, null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://cib54n8tc42ej"
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="InvTest" type="Control" parent="." node_paths=PackedStringArray("main_inventory", "chest_inventory")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_t6s8l")
+inventory_data = ExtResource("2_24u31")
+main_inventory = NodePath("MainInventory")
+chest_data = SubResource("Resource_e51x1")
+chest_inventory = NodePath("ChestInventory")
+
+[node name="MainInventory" parent="InvTest" instance=ExtResource("2_0hv7w")]
+layout_mode = 0
+
+[node name="GrabbedSlot" parent="InvTest" instance=ExtResource("7_xtse5")]
+visible = false
+modulate = Color(1, 1, 1, 0.42352942)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+
+[node name="ChestInventory" parent="InvTest" instance=ExtResource("2_0hv7w")]
+layout_mode = 0
+offset_left = 744.0
+offset_right = 784.0
+
+[node name="Chest" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("5_agx6v")

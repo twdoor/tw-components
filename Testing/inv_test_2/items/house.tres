@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c2hqcjfaekmrj"]
+
+[ext_resource type="Script" uid="uid://c2sclstvn73rf" path="res://addons/inventory_components_2/data/item_data.gd" id="1_c3o45"]
+[ext_resource type="Texture2D" uid="uid://y8pavsmme64b" path="res://addons/house_generator/house/icon_house.png" id="2_c3o45"]
+
+[resource]
+script = ExtResource("1_c3o45")
+name = &"House"
+description = "its a house"
+texture = ExtResource("2_c3o45")
+metadata/_custom_type_script = "uid://c2sclstvn73rf"

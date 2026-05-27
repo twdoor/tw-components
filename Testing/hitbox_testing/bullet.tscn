@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3sxw3bqj1171"]
+
+[ext_resource type="Texture2D" uid="uid://bnccvnaloqnte" path="res://addons/script-ide/icon/signal.svg" id="1_2fi8d"]
+[ext_resource type="Script" uid="uid://f4dspb44wiuy" path="res://Testing/hitbox_testing/bullet.gd" id="2_0c0me"]
+[ext_resource type="Script" uid="uid://b0bn8lgcodji" path="res://addons/components/hitbox/hitbox_component.gd" id="2_2i3d5"]
+[ext_resource type="Script" uid="uid://2uyqk08fge7t" path="res://Testing/hitbox_testing/bounce_hit.gd" id="4_0c0me"]
+
+[sub_resource type="Resource" id="Resource_o8ngt"]
+script = ExtResource("4_0c0me")
+bounce = true
+metadata/_custom_type_script = "uid://2uyqk08fge7t"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0c0me"]
+
+[node name="Bullet" type="Sprite2D" node_paths=PackedStringArray("hitbox")]
+texture = ExtResource("1_2fi8d")
+script = ExtResource("2_0c0me")
+hitbox = NodePath("Hitbox")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("2_2i3d5")
+type = 1
+hit_effect = SubResource("Resource_o8ngt")
+hit_layer = 2
+metadata/_custom_type_script = "uid://b0bn8lgcodji"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_0c0me")
+debug_color = Color(3.3691526e-07, 0.64162177, 0.3363572, 0.41960785)

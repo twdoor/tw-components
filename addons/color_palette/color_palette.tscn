@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7s554g72sj21"]
+
+[ext_resource type="Script" uid="uid://ct1h1qcuf68yh" path="res://addons/color_palette/color_palette.gd" id="1_fogx3"]
+
+[node name="ColorPalette" type="GridContainer"]
+offset_left = 120.0
+offset_top = 80.0
+offset_right = 160.0
+offset_bottom = 120.0
+columns = 3
+script = ExtResource("1_fogx3")

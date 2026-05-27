@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cyc5jn1l5covf"]
+
+[ext_resource type="Script" uid="uid://c2sclstvn73rf" path="res://addons/inventory_components_2/data/item_data.gd" id="1_3pprf"]
+[ext_resource type="Texture2D" uid="uid://bcgi51kyxd1rr" path="res://addons/inventory_components_2/data/icon_slot_data.png" id="2_3pprf"]
+
+[resource]
+script = ExtResource("1_3pprf")
+name = &"Case"
+description = "its a case"
+max_stack = 10
+texture = ExtResource("2_3pprf")
+metadata/_custom_type_script = "uid://c2sclstvn73rf"

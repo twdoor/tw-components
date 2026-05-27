@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1gurn7q2sdim"]
+
+[ext_resource type="Script" uid="uid://dpav10fjuy4j3" path="res://addons/motion_effects/trail_effect/trail_effect.gd" id="1_qvh6f"]
+
+[node name="TrailEffectLine" type="Line2D"]
+script = ExtResource("1_qvh6f")
+trail_duration = 2.0
+points_per_second = 30.0
+max_points = 100
+min_distance_between_points = null
+max_distance_between_points = null
+metadata/_custom_type_script = "uid://dpav10fjuy4j3"
+
+[node name="TrailTimer" type="Timer" parent="."]
+one_shot = true
